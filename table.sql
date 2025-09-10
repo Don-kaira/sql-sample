@@ -19,5 +19,25 @@ create table EMPLOYEES (
   deptno           number,  
   constraint pk_employees primary key (empno),  
   constraint fk_employees_deptno foreign key (deptno) 
-      references DEPARTMENTS (deptno)  
+      references DEPTS (deptno)  
 );
+create or replace trigger  DEPTS_BIU
+    before insert or update on DEPTS
+    for each row
+begin
+    if inserting and :new.deptno is null then
+        :new.deptno := to_number(sys_guid(), 
+          'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+    end if;
+end;
+/
+create or replace trigger  EMPLOYEES_BIU
+    before insert or update on EMPLOYEES
+    for each row
+begin
+    if inserting and :new.empno is null then
+        :new.deptno := to_number(sys_guid(), 
+          'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+    end if;
+end;
+/
