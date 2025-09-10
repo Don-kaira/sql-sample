@@ -36,8 +36,9 @@ create or replace trigger  EMPLOYEES_BIU
     for each row
 begin
     if inserting and :new.empno is null then
-        :new.deptno := to_number(sys_guid(), 
+        :new.empno := to_number(sys_guid(), 
           'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
     end if;
 end;
 /
+
