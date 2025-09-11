@@ -41,4 +41,39 @@ begin
     end if;
 end;
 /
+insert into departs (name, location) values ('Finance','New York');
+insert into departs (name , location) values ( 'Ethical Hacker', 'Windhoek');
+insert into departs (name , location) values  ( 'Researcher', 'San jose');
+insert into departs (name , location) values ( 'analyst', 'Dubai');
+insert into departs (name , location) values ('administrator','London');
+
+select from * departs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
