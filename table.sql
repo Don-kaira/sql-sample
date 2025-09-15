@@ -49,7 +49,40 @@ insert into departs (name , location) values ('administrator','London');
 
 select from * departs;
 
+insert into EMPLOYEES 
+   (name, job, salary, deptno) 
+   values
+   ('Sam moon','Developer', 
+    5500, 
+  (select deptno 
+  from departments 
+  where name = 'Development'));
 
+insert into EMPLOYEES 
+   (name, job, salary, deptno) 
+   values
+   ('Magda Martin','business Analyst', 
+   6500, 
+   (select deptno 
+   from departments 
+   where name = 'Finance'));
+insert into EMPLOYEES 
+   (name, job, salary, deptno) 
+   values
+   ('emmanuel gone','AWS Cloud', 
+    8000, 
+  (select deptno 
+  from departments 
+  where name = 'Development'));
+
+insert into EMPLOYEES 
+   (name, job, salary, deptno) 
+   values
+   ('gareth wait','Dev Ops', 
+   7000, 
+   (select deptno 
+   from departments 
+   where name = 'Development'));
 
 
 
