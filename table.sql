@@ -86,7 +86,14 @@ insert into EMPLOYEES
 
 
 
-
+select table_name "Table", 
+       index_name "Index", 
+       column_name "Column", 
+       column_position "Position"
+from  user_ind_columns 
+where table_name = 'EMPLOYEES' or 
+      table_name = 'DEPARTS'
+order by table_name, column_name, column_position
 
 
 
